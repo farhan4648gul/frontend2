@@ -3,6 +3,7 @@
 <html>
 <head>
     <title> University</title>
+    <link href="css/main.css">
     <script src="js/libs/jquery.js"></script>
 </head>
 <body>
@@ -15,12 +16,36 @@
     <script id="main-nav" language="text/template">
 
         <div>
+            <h3>{{title}}</h3>
+            {{#each links}}
+                <a href="#{{@key}}" id="{{@key}}" class="menu-items">{{this}}</a>
+            {{/each}}
+        </div>
+    </script>
+    <script id="content-default" language="text/template">
+
+        <div>
+            <b>Welcome {{firstname}} {{lastname}}!</b>
+
+        </div>
+    </script>
+
+    <script id="main-nav-backup" language="text/template">
+
+        <div>
 
             <h3>{{title}}</h3>
 
-            {{#each links}}
-                <a href="#{{@key}}">{{this}}</a>
-            {{/each}}
+            <ul>
+                {{#each links}}
+                    <li>
+                        <a href="#{{@key}}">
+                            <!--{{#uppercase}}{{this}}{{/uppercase}}-->
+                            {{this}}
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
 
         </div>
     </script>
