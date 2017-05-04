@@ -13,3 +13,6 @@
 .active {
     background: #000 !important;
 }
+.disclaimer {
+    font-weight: bold;
+}
