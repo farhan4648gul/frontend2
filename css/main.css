@@ -1,18 +1,1 @@
 
-.sidebar{
-    float: left;
-    min-width: 20%;
-    border-right: 2px solid black;
-}
-
-.inner-content{
-    float: left;
-    width: 80%;
-}
-
-.active {
-    background: #000 !important;
-}
-.disclaimer {
-    font-weight: bold;
-}

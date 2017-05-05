@@ -26,6 +26,70 @@ var ModuleModel = Backbone.Model.extend({
 
     },
     idAttribute: 'id', // will it work? //based on primary id
+    schema: {
+        email: {
+            validators: ['required', 'email']
+        },
+        username: {
+            validators: ['required']
+        },
+        password: {
+            type: 'Password',
+            validators: ['required']
+        },
+        confirmPassword: {
+            type: 'Password',
+            validators: [
+                'required',
+                {
+                    type: 'match',
+                    field: 'password',
+                    message: 'Passwords must match!',
+                }
+            ]
+        },
+        firstName: {
+            validators: ['required']
+        },
+        middleName: {
+
+        },
+        lastName: {
+            validators: ['required']
+        },
+        phone: {
+
+        },
+        address: {
+
+        },
+        userRole: {
+            type: 'Select',
+            options: [
+                'Teacher',
+                'Student',
+                'Admin'
+            ]
+        },
+        universityId: {
+            validators: ['required']
+        },
+        status: {
+            type: 'Select',
+            options: [
+                'Active',
+                'Inactive'
+            ]
+        },
+        blocked: {
+            type: 'Select',
+            options: [
+                'Yes',
+                'No'
+            ]
+        }
+
+    },
     initialize: function(){
 
         //where to bind error show event ?
